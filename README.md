@@ -38,6 +38,7 @@
         // 获取的主入口如下： { main: './src/module/index/main.js', test: './src/module/test/test.js' }
         return entries
       }
+      
     ```
   1. 修改webpack.base.config.js 打包输入 webpack的entry参数 utils.getEntries('./src/**/*.js') （通过自定义函数获取src下各页面的入口js文件）
 
