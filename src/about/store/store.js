@@ -1,28 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import actionCounter from './actioins/counter'
+import mutationCounter from './mutations/counter'
+import getterCounter from './getters/counter'
+import state from './state/index'
 Vue.use(Vuex)
 
-const state = {
-  count: 0
-}
-
 const mutations = {
-  increment (state) {
-    state.count ++
-  },
-  decrement (state) {
-    state.count --
-  }
+  ...mutationCounter
 }
 
 const actions = {
-  increment: ({ commit }) => commit('increment'),
-  decrement: ({ commit }) => commit('decrement')
+  ...actionCounter
 }
 
 // getters are functions
 const getters = {
-  evenOrOdd: state => state.count % 2 === 0 ? 'even' : 'odd'
+  ...getterCounter
 }
 
 export default new Vuex.Store({
